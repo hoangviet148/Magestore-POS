@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Learning_Pos::pos_staff"
+             title="Staff"
+             module="Learning_Pos"
+             sortOrder="30"
+             resource="Learning_Pos::pos_staff"/>
+        <add
+            id="Learning_Pos::staff"
+            title="Manage Staffs"
+            module="Learning_Pos"
+            sortOrder="10"
+            parent="Learning_Pos::pos_staff"
+            action="staff/staff/index"
+            resource="Learning_Pos::staff"/>
+    </menu>
+</config>

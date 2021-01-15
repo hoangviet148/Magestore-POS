@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Learning\Pos\Api\Data\StaffInterface" type="Learning\Pos\Model\Staff" />
+    <preference for="Learning\Pos\Api\StaffManagementInterface" type="Learning\Pos\Model\StaffManagement" />
+    <preference for="Learning\Pos\Api\ProductRepositoryInterface" type="Learning\Pos\Model\ProductRepository" />
+    <preference for="Learning\Pos\Api\OrderRepositoryInterface" type="Learning\Pos\Model\OrderRepository"/>
+    <preference for="Learning\Pos\Api\CartItemRepositoryInterface" type="Learning\Pos\Model\CartItemRepository" />
+
+    <virtualType name="Learning\Pos\Model\ResourceModel\Staff\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">pos_staff</argument>
+            <argument name="resourceModel" xsi:type="string">Learning\Pos\Model\ResourceModel\Staff</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="staff_list_data_source" xsi:type="string">Learning\Pos\Model\ResourceModel\Staff\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
