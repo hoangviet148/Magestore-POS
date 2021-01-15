@@ -1,0 +1,97 @@
+.shelf-empty {
+  color: #ececec;
+  text-align: center;
+  line-height: 40px;
+}
+.shelf-item {
+  position: relative;
+  box-sizing: border-box;
+  padding: 5%;
+  transition: background-color 0.2s, opacity 0.2s;
+}
+.shelf-item::before {
+  content: "";
+  width: 90%;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 5%;
+}
+.shelf-item--mouseover {
+  background: #0c0b10;
+}
+.shelf-item--mouseover .shelf-item__details .title,
+.shelf-item--mouseover .shelf-item__details .desc {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+.shelf-item--mouseover .shelf-item__price {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+.shelf-item__del {
+  width: 16px;
+  height: 16px;
+  top: 6px;
+  right: 5%;
+  border-radius: 50%;
+  position: absolute;
+  background-size: auto 100%;
+  background-image: url("./img/sprite_delete-icon.png");
+  background-repeat: no-repeat;
+  z-index: 2;
+  cursor: pointer;
+}
+/* .shelf-item__del:hover {
+    background-position-x: -17px;
+} */
+.shelf-item__thumb,
+.shelf-item__details,
+.shelf-item__price {
+  display: inline-block;
+  vertical-align: middle;
+}
+.shelf-item__thumb {
+  vertical-align: middle;
+  width: 15%;
+  margin-right: 3%;
+}
+.shelf-item__thumb img {
+  width: 100%;
+  height: auto;
+}
+.shelf-item__details {
+  width: 57%;
+}
+.shelf-item__details .title {
+  color: #0f0d0d;
+  margin: 0;
+}
+.shelf-item__details .desc {
+  color: #5b5a5e;
+  margin: 0;
+}
+.shelf-item__price {
+  color: #eabf00;
+  text-align: right;
+  width: 25%;
+  margin-top: 8px;
+}
+.shelf-item .change-product-button {
+  color: #b7b7b7;
+  border: 0;
+  background-color: #000;
+  width: 25px;
+  height: 25px;
+}
+.shelf-item .change-product-button:disabled {
+  opacity: 0.2;
+}
+
+.scrollbar {
+  overflow-y: auto;
+  position: relative;
+  max-height: 500px
+}
+
