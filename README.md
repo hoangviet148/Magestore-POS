@@ -1,1 +1,1 @@
-# MageStore_Pos
+# Magestore-POS
